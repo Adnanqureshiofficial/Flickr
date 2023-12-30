@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find your inspiration. | Flickr </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/22473a59b2.js" crossorigin="anonymous"></script>
+
+
+    <!-- Other meta tags and links -->
+    <!--    <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">-->
+    <!-- You can also use PNG or other image formats -->
+    <link rel="icon" href="logo.png" type="image/png">
+
+    <style>
+        @font-face {
+            font-family: 'proxima';
+            src: url('C:\Users\adnan qureshi\OneDrive\Desktop\Web development Practice\flickr\Proxima-Nova-Extra-Condensed.ttf') format('truetype');
+            /* Add other font formats (woff, woff2, etc.) and their paths if needed */
+        }
+
+        /* Use the font by specifying font-family */
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: proxima, sans-serif;
+        }
+
+        @media (min-width:768px) {
+            html {
+                font-size: 54px;
+            }
+        }
+
+        @media (min-width:2000px) {
+            html {
+                font-size: 7 0px;
+            }
+        }
+
+
+        @media (max-width:768px) {
+            html {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width:576px) {
+            html {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width:475px) {
+            html {
+                font-size: 32px;
+            }
+
+        }
+
+        @media (max-width:375px) {
+            html {
+                font-size: 30px;
+            }
+        }
+
+        .background-image {
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            object-fit: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #0000006f;
+            /*transition: background-image 1s ease-out;*/
+
+
+
+        }
+       /*------------------------Header Section-------------------------*/
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: #00000040;
+            /*#1110105e*/
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-bar {
+            width: 98%;
+            min-height: 63px;
+
+            color: white;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr 6.5fr 2fr;
+            gap: 10px;
+
+        }
+
+        .nav-bar-elements {
+            display: flex;
+
+
+        }
+
+        .title-signup {
+            display: flex;
+            align-items: center;
+            font-size: 0.37rem;
+            justify-content: space-evenly;
+
+            width: 95%;
+        }
+
+        #title {
+
+
+            align-items: center;
+            font-size: 0.34rem;
+            justify-content: center;
+        }
+
+        #search-box {
+            max-width: 90%;
+            display: flex;
+            margin: auto;
+            padding: 1.5px 0px;
+            align-items: center;
+            border-radius: 4px;
+            background-color: #fff;
+            color: #212124;
+            opacity: .75;
+        }
+
+        #search-icon {
+            font-size: 0.3rem;
+            padding: 0px 10px;
+            padding-right: 5px;
+            color: #757575;
+        }
+
+        #close-icon {
+            font-size: 0.3rem;
+            padding: 0px 10px;
+            padding-right: 5px;
+            display: none;
+        }
+
+        #search {
+            width: 100%;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            padding: 5px 5px;
+
+            font-size: 0.25rem;
+            min-height: 28px;
+            background: transparent;
+
+        }
+
+        /*flicker logo creation*/
+        .flickrlogo {
+            width: 8px;
+            display: inline-block;
+            height: 8px;
+            border-radius: 50%;
+            background: blue;
+            margin: 0px 1px;
+        }
+
+        #flickrlogo2 {
+            background: #ff0084;
+
+        }
+
+        h2 {
+            margin-left: 4px;
+        }
+
+        #login
+        {
+color: white;
+text-decoration: none;
+        }
+
+        #signup {
+            margin: 0px 10px;
+            width: 1.6rem;
+            height: 30px;
+            border-radius: 3px;
+            border: none;
+            font-size: 13px;
+            font-weight: bold;
+           
+            cursor: pointer;
+        }
+
+        #signup:hover {
+            color: #808080;
+        }
+
+        .title-signup>span {
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        /*------------------------main section ccontainer-------------------------*/
+        main {
+            width: 90%;
+            margin: auto;
+            height: 100vh;
+            display: flex;
+        }
+
+        .mainsection-container {
+            max-width: 100%;
+
+
+
+            color: white;
+            /* background: red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+            text-align: center;
+            font-size: 54px;
+            gap: 18px;
+            justify-content: center;
+            margin: auto;
+        }
+
+
+
+        #introline {
+
+            font-size: 0.8rem;
+        }
+
+        #invitaion-line {
+
+            font-size: 0.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+
+        #startfree {
+            width: 3.8rem;
+            height: 1rem;
+            font-size: 0.4rem;
+            padding: 0px 0.3rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 3px;
+            color: black;
+            background: white;
+            cursor: pointer;
+        }
+
+        #startfree:hover {
+            color: #7f7f7f;
+        }
+
+        /*---------------------------footer Section------------------------------*/
+        footer {
+            background: black;
+            width: 100%;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            bottom: 0;
+        }
+
+        #foot-bar-element-container {
+            width: 99%;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .foot-bar-elements {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            min-height: 41px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .foot-bar-elements>a {
+            color: #959595 !important;
+            text-decoration: none;
+            padding: 0px 5px;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: white !important;
+        }
+
+        #social-media-icons {
+            color: #959595;
+            font-size: 0.4rem;
+            display: flex;
+
+        }
+
+        .social-link {
+            color: #959595;
+        }
+
+        .social-link:hover {
+            color: white;
+        }
+
+        #top-row {
+
+            width: 44%;
+
+        }
+
+        #bottom-row {
+
+            width: 56%;
+
+        }
+
+        .icons {
+            margin-right: 20px;
+        }
+
+        /*------------------------language list dropdown--------------------------*/
+
+        #language {
+            color: #959595;
+
+        }
+
+        #language:hover {
+            color: white;
+        }
+
+        #language-list {
+            list-style: none;
+            width: 150px;
+            display: none;
+            min-height: 230px;
+
+            flex-direction: column;
+            justify-content: space-around;
+            background: white;
+            color: black;
+            padding: 4px 0px;
+            border-radius: 2px;
+            position: absolute;
+            bottom: 35px;
+        }
+
+        .language-type {
+            width: 100%;
+            height: 25px;
+            padding: 2px 9px;
+        }
+
+        .language-type:hover {
+            background: rgba(0, 0, 0, 0.088);
+        }
+
+        /*------------------------Media Queries for max width 1036px-------------------------*/
+
+        @media (max-width:1036px) {
+            #foot-bar-element-container {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                padding: 0px 5px;
+            }
+
+            footer {
+                position: static;
+            }
+
+            .foot-bar-elements {
+                width: 99% !important;
+                column-gap: 10px;
+
+                /* justify-content: space-around; */
+                border-bottom: 1px solid white;
+            }
+
+            #social-media-icons {
+                font-size: 0.45rem;
+            }
+
+            #language-list {
+                position: absolute;
+                bottom: -50px;
+            }
+        }
+
+        /*------------------------Media Queries for max width 680px-------------------------*/
+        @media (max-width:680px) {
+
+            #language-list {
+                position: fixed;
+                bottom: 110px;
+
+            }
+
+
+            #language {
+                width: 100%;
+                padding: 10px 0px;
+                padding-left: 20px;
+                border-bottom: solid 1px white
+            }
+
+            .foot-bar-elements {
+                flex-direction: column;
+
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                align-items: flex-start;
+                border-bottom: solid 0px white !important;
+            }
+
+            .foot-bar-elements>a {
+                color: white;
+                text-decoration: none;
+                padding: 0px 5px;
+                width: 100%;
+                padding: 10px 0px;
+                padding-left: 20px;
+                border-bottom: solid 0.5px white;
+            }
+
+            #social-media-icons {
+                color: #959595;
+                font-size: 0.4rem;
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.55rem;
+            }
+
+            #bottom-row {
+                border: none;
+            }
+
+            .icons {
+                margin: 0px 16px;
+            }
+
+            #signup {
+                display: none;
+            }
+
+            .title-signup>span {
+                border: 2px solid white;
+                padding: 5px 13px;
+            }
+
+            input {
+                width: 70% !important;
+                position: absolute;
+                display: none;
+                left: 1.3%;
+                background: #ffffff;
+                border-radius: 3px;
+                padding: 0px 10px;
+                font-size: 0.3rem;
+
+            }
+
+            #search-icon {
+                font-size: 0.6rem;
+                color: white;
+
+            }
+
+            #close-icon {
+                font-size: 0.6rem;
+                color: white;
+
+            }
+
+            #search-box {
+                margin: 0;
+                background-color: transparent;
+                opacity: 1;
+            }
+
+            #grid-item-2 {
+                display: flex;
+                justify-content: flex-end;
+
+            }
+        }
+
+        /*------------------------Media Queries for max width 475px-------------------------*/
+        @media (max-width:475px) {
+            .nav-bar {
+                grid-template-columns: 2fr 5fr 3.2fr;
+            }
+
+            input {
+                width: 58% !important;
+            }
+
+            #title {
+                font-size: 0.6rem;
+            }
+
+
+        }
+
+        /*------------------------Media Queries for min width 2000px-------------------------*/
+        @media (min-width:2000px) {
+            .nav-bar {
+                padding: 0.2rem 0px;
+                min-height: 60px;
+            }
+
+            input {
+                min-height: 52px;
+                padding: 5px;
+                font-size: 0.5rem;
+
+            }
+
+            #search-icon {
+                font-size: 0.5rem;
+            }
+
+            #title {
+                font-size: 0.6rem;
+            }
+
+            .flickrlogo {
+                width: 16px;
+                height: 16px;
+            }
+
+            #signup {
+                width: 125px;
+                height: 60px;
+                font-size: 23px;
+            }
+
+            #introline {
+                font-size: 1.5rem;
+            }
+
+            #invitaion-line {
+                font-size: 1rem;
+            }
+
+            #startfree {
+                width: 5rem;
+                height: 1.5rem;
+                font-size: 0.6rem;
+            }
+
+            #social-media-icons {
+                font-size: 0.7rem;
+            }
+
+            .foot-bar-elements {
+                font-size: 28px;
+            }
+
+            footer {
+                min-height: 80px;
+            }
+
+            .title-signup>span {
+                font-size: 25px;
+            }
+
+            #search-box {
+                margin: 20px auto;
+
+            }
+        }
+    </style>
+</head>
+
+<body class="background-image">
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-bar-elements" id="title">
+                <div class="flickrlogo"></div>
+                <div class="flickrlogo" id="flickrlogo2"></div>
+                <h2 id="flickr">flickr</h2>
+            </div>
+            <div id="grid-item-2">
+                <div class="nav-bar-elements" id="search-box"> <i class="fa-solid fa-magnifying-glass"
+                        id="search-icon"></i><i class="fa-solid fa-x" id="close-icon"></i><input type="text" id="search"
+                        placeholder="Photos, People or Groups" onkeydown="handleKeyPress(event)"> </div>
+            </div>
+            <div class="nav-bar-elements title-signup"> <span> <a
+                        href="https://identity.flickr.com/login?redir=https%3A%2F%2Fwww.flickr.com%2F" id="login"> Log
+                        In</a></span><button id="signup">Sign Up</button></div>
+
+        </nav>
+
+    </header>
+    <main>
+        <div class="mainsection-container">
+            <h1 id="introline">Find your Inspiration</h1>
+            <h2 id="invitaion-line">Join the Flickr community , home to ten of billions of photos, and 2 million groups.
+            </h2>
+            <button id="startfree">Start Free</button>
+        </div>
+    </main>
+
+    <footer>
+        <div id="foot-bar-element-container">
+            <div class="foot-bar-elements" id="top-row">
+                <a href="https://www.flickr.com/about">About</a>
+                <a href="https://blog.flickr.net/en">Blog</a>
+                <a href="image.png">Jobs</a>
+                <a href="https://www.flickrads.com/?utm_source=flickr&utm_campaign=footer">Advertise</a>
+                <a href="">Developers</a>
+
+
+                <a href="https://www.flickr.com/help/guidelines">Guidelines</a>
+                <a href="https://www.flickrhelp.com/hc/en-us">Help</a>
+            </div>
+            <div class="foot-bar-elements" id="bottom-row">
+                <a href="https://www.flickr.com/help/forum">Help Forum</a>
+                <a href="https://www.flickr.com/help/privacy">Privacy</a>
+                <a href="https://www.flickr.com/help/terms">Terms</a>
+                <a href="https://www.flickr.com/help/terms">Cookies</a>
+                <span href="" id="language">
+                    <ul id="language-list">
+                        <li class="language-type">
+                            繁體中文</li>
+                        <li class="language-type"> Deutsch</li>
+                        <li class="language-type">Español</li>
+                        <li class="language-type"> Français</li>
+                        <li class="language-type"> 한글</li>
+                        <li class="language-type">Italiano</li>
+                        <li class="language-type">Português</li>
+                        <li class="language-type">Tiếng Việt</li>
+                        <li class="language-type">Bahasa Indonesia</li>
+                    </ul><span id="dropdown"> English &nbsp;<i class="fa-solid fa-caret-down"></i></span>
+                </span>
+                <a href="https://www.smugmug.com/">SmugMug+Flickr</a>
+
+                <div id="social-media-icons"><a href="https://www.instagram.com/flickr/" class="social-link"><i
+                            class="fa-brands fa-instagram icons" id="instragram"></i> </a><a
+                        href="https://twitter.com/flickr" class="social-link"><i class="fa-brands fa-twitter icons"
+                            id="twitter"></i></a><a href="https://www.facebook.com/flickr" class="social-link"><i
+                            class="fa-brands fa-facebook icons" id="facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        
+        /*---------------------- Array of image URLs-------------------------*/
+
+
+        const images = [
+            'img1.jpg',
+            'img2.jpg',
+            'img3.jpg',
+            'img4.jpg',
+            'img5.jpg'
+        ];
+
+        let currentImageIndex = 0; // Track the current image index
+
+        function changeBackgroundImage() {
+            const background = document.querySelector('.background-image');
+
+            function changeImage() {
+                background.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+
+            // Call the function to start changing background images immediately
+            changeImage(); // Show the first image immediately
+
+            setInterval(() => {
+                changeImage(); // Change image after every 4 seconds
+            }, 4000);
+        }
+
+        // Call the function to start the image transition upon page load
+        changeBackgroundImage();
+
+
+        /*--------------variable declaration--------------------*/
+
+
+        const search = document.getElementById("search-icon");
+        const closebutton = document.getElementById("close-icon");
+        const searchfield = document.getElementById("search");
+        const dropdown = document.getElementById('dropdown');
+        const languageList = document.getElementById('language-list');
+
+
+        /*--------------dropdown list of language options-----------------------*/
+
+
+        dropdown.addEventListener('click', function () {
+            // Toggle the display property of the language-list element
+            if (languageList.style.display === 'flex') {
+                languageList.style.display = 'none';
+            } else {
+                languageList.style.display = 'flex';
+            }
+        });
+
+        // Additional event listeners for document click and scroll events
+        document.addEventListener('click', function (event) {
+            // Check if the clicked element is not the dropdown or languageList
+            if (event.target !== dropdown && event.target !== languageList) {
+                languageList.style.display = 'none'; // Hide languageList
+            }
+        });
+
+        document.addEventListener('scroll', function () {
+            languageList.style.display = 'none'; // Hide languageList on scroll
+        });
+
+
+        /*-----------------------------Search Bar-----------------------*/
+
+
+        let isMobile = window.innerWidth <= 680;
+
+        function handleSearch() {
+            isMobile = window.innerWidth <= 680;
+
+
+            if (isMobile) {
+                // Apply mobile behavior
+                addEventListeners(search, searchfield, closebutton);
+            } else {
+                // Revert to default behavior for larger screens
+                searchfield.style.display = ''; // Reset to default CSS-defined display property
+                search.style.display = '';
+                closebutton.style.display = '';
+                removeEventListeners(search, closebutton);
+            }
+        }
+
+        function showSearch(search, searchfield, closebutton) {
+            if (isMobile) {
+                searchfield.style.display = 'flex';
+                search.style.display = 'none';
+                closebutton.style.display = 'flex';
+            }
+        }
+
+        function closeSearch(search, searchfield, closebutton) {
+            if (isMobile) {
+                searchfield.style.display = 'none';
+                search.style.display = 'flex';
+                closebutton.style.display = 'none';
+            }
+        }
+
+        function addEventListeners(search, searchfield, closebutton) {
+            if (isMobile) {
+                search.addEventListener('click', () => showSearch(search, searchfield, closebutton));
+                closebutton.addEventListener('click', () => closeSearch(search, searchfield, closebutton));
+            }
+        }
+
+        function removeEventListeners(search, closebutton) {
+            if (isMobile) {
+                search.removeEventListener('click', showSearch);
+                closebutton.removeEventListener('click', closeSearch);
+            }
+        }
+
+        handleSearch();
+        window.addEventListener('resize', handleSearch);
+        //onload input value to nothing
+        window.onload = function() {
+      searchfield.value = ''; // Set the input value to an empty string
+    };
+
+
+    /*--------------------flickr search integration to redirect the search value to the flickr search page----------------*/
+
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                const searchfield = document.getElementById('search').value;
+                if (searchfield.trim() !== '') {
+                    // Construct the URL for Flickr's search (This is hypothetical and might not be the actual Flickr URL)
+                    const flickrSearchURL = `https://www.flickr.com/search/?text=${encodeURIComponent(searchfield)}`;
+                    window.location.href = flickrSearchURL;
+                } else {
+                    alert('Please enter a search query.');
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
